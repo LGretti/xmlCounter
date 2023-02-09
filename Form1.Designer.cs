@@ -36,6 +36,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.dlgXMLArq = new System.Windows.Forms.OpenFileDialog();
             this.txtArqs = new System.Windows.Forms.ListBox();
+            this.txtDiv = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // btnSelecionar
@@ -54,6 +55,8 @@
             this.edtTag.Name = "edtTag";
             this.edtTag.Size = new System.Drawing.Size(91, 23);
             this.edtTag.TabIndex = 1;
+            this.edtTag.Text = "NumeroNota";
+            this.edtTag.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dlgXML
             // 
@@ -91,16 +94,27 @@
             this.txtArqs.Enabled = false;
             this.txtArqs.FormattingEnabled = true;
             this.txtArqs.ItemHeight = 15;
-            this.txtArqs.Location = new System.Drawing.Point(193, 12);
+            this.txtArqs.Location = new System.Drawing.Point(193, 27);
             this.txtArqs.Name = "txtArqs";
-            this.txtArqs.Size = new System.Drawing.Size(595, 409);
+            this.txtArqs.Size = new System.Drawing.Size(254, 394);
             this.txtArqs.TabIndex = 5;
+            // 
+            // txtDiv
+            // 
+            this.txtDiv.Enabled = false;
+            this.txtDiv.FormattingEnabled = true;
+            this.txtDiv.ItemHeight = 15;
+            this.txtDiv.Location = new System.Drawing.Point(480, 27);
+            this.txtDiv.Name = "txtDiv";
+            this.txtDiv.Size = new System.Drawing.Size(254, 394);
+            this.txtDiv.TabIndex = 6;
             // 
             // frmContador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 434);
+            this.Controls.Add(this.txtDiv);
             this.Controls.Add(this.txtArqs);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -124,5 +138,6 @@
         private Label label3;
         private OpenFileDialog dlgXMLArq;
         private ListBox txtArqs;
+        private ListBox txtDiv;
     }
 }
