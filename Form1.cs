@@ -1,4 +1,6 @@
+using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace xmlCounter
 {
@@ -11,19 +13,26 @@ namespace xmlCounter
 
         private void button1_Click(object sender, EventArgs e)
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            ofd.Multiselect = true;
-            ofd.Filter = "Arquivos XML (*.xml)|*.xml";
-            ofd.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
 
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                foreach (string filepath in ofd.FileNames)
-                {
-                    txtArqs.Items.Add(filepath);
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK) {
+                
+                string[] xmlFiles = Directory.GetFiles(folderBrowserDialog.SelectedPath, "*.xml");
 
-                    XmlTextReader xmlReader = new XmlTextReader(filepath);
+                List<int> numeroNotaList = new List<int>();
 
+                foreach (var file in xmlFiles) {
+                    XDocument xDoc = XDocument.Load(file);
+                    int numeroNota = Int32.Parse(xDoc.Root.Element("NumeroNota").Value);
+                    numeroNotaList.Add(numeroNota);
+                }
+
+                numeroNotaList.Sort();
+                for (int i = 1; i < numeroNotaList.Count; i++) {
+                    if (numeroNotaList[i] != numeroNotaList[i - 1] + 1) {
+                        MessageBox.Show("Número pulado na sequência: " + numeroNotaList[i - 1] + " -> " + numeroNotaList[i]);
+                        break;
+                    }
                 }
             }
 
