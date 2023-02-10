@@ -37,6 +37,8 @@
             this.dlgXMLArq = new System.Windows.Forms.OpenFileDialog();
             this.txtArqs = new System.Windows.Forms.ListBox();
             this.txtDiv = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnSelecionar
@@ -55,7 +57,7 @@
             this.edtTag.Name = "edtTag";
             this.edtTag.Size = new System.Drawing.Size(91, 23);
             this.edtTag.TabIndex = 1;
-            this.edtTag.Text = "NumeroNota";
+            this.edtTag.Text = "nNF";
             this.edtTag.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dlgXML
@@ -94,9 +96,9 @@
             this.txtArqs.Enabled = false;
             this.txtArqs.FormattingEnabled = true;
             this.txtArqs.ItemHeight = 15;
-            this.txtArqs.Location = new System.Drawing.Point(193, 27);
+            this.txtArqs.Location = new System.Drawing.Point(191, 12);
             this.txtArqs.Name = "txtArqs";
-            this.txtArqs.Size = new System.Drawing.Size(254, 394);
+            this.txtArqs.Size = new System.Drawing.Size(513, 394);
             this.txtArqs.TabIndex = 5;
             // 
             // txtDiv
@@ -104,16 +106,36 @@
             this.txtDiv.Enabled = false;
             this.txtDiv.FormattingEnabled = true;
             this.txtDiv.ItemHeight = 15;
-            this.txtDiv.Location = new System.Drawing.Point(480, 27);
+            this.txtDiv.Location = new System.Drawing.Point(722, 27);
             this.txtDiv.Name = "txtDiv";
-            this.txtDiv.Size = new System.Drawing.Size(254, 394);
+            this.txtDiv.Size = new System.Drawing.Size(398, 379);
             this.txtDiv.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(889, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Inconsistências";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(12, 391);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 15);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "©️ Gretti";
             // 
             // frmContador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 434);
+            this.ClientSize = new System.Drawing.Size(1132, 418);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDiv);
             this.Controls.Add(this.txtArqs);
             this.Controls.Add(this.label3);
@@ -121,7 +143,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.edtTag);
             this.Controls.Add(this.btnSelecionar);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "frmContador";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Contador de tags XML";
             this.Load += new System.EventHandler(this.frmContador_Load);
             this.ResumeLayout(false);
@@ -139,5 +164,7 @@
         private OpenFileDialog dlgXMLArq;
         private ListBox txtArqs;
         private ListBox txtDiv;
+        private Label label4;
+        private Label label5;
     }
 }
