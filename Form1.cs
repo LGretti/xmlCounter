@@ -39,10 +39,11 @@ namespace xmlCounter {
                         int positionInitial = textoXml.IndexOf($"<{valorTag}>");
                         int positionFinal = textoXml.IndexOf($"</{valorTag}>");
 
+                        int sub = $"<{valorTag}>".Count();
                         int lenght = positionFinal - positionInitial;
 
                         if (positionInitial != -1 && positionFinal != -1) {
-                            string aa = textoXml.Substring(positionInitial + 5, lenght-5);
+                            string aa = textoXml.Substring(positionInitial + sub, lenght - sub);
                             int numeroNota = int.Parse(aa);
                             numeroNotaList.Add(numeroNota);
                             txtArqs.Items.Add(Path.GetFileName(file) + " - " + numeroNota);
@@ -56,14 +57,13 @@ namespace xmlCounter {
                             int valor = 0;
 
                             if (numeroNotaList[i] != numeroNotaList[i - 1] + 1) {
-
                                 valor = numeroNotaList[i - 1] + 1;
 
                             } else if (numeroNotaList[i] != numeroNotaList[i + 1] - 1) {
-
                                 valor = numeroNotaList[i + 1] - 1;
 
                             }
+
                             inc = true;
                             label4.ForeColor = Color.Red;
                             txtDiv.Items.Add("Número pulado na sequência: " + valor);
